@@ -1,4 +1,9 @@
 #postowork sesion 1
+library(dplyr)
+library(janitor)
+install.packages("tidyr")
+library(tidyr)
+
 
 setwd("C:/Users/abraham/Documents/DATASCIENCE/2daetapa/postwork/r-postworks/src/1erpostworked/dataset")
 
@@ -37,7 +42,16 @@ nuevalinea=data.frame(FTAG=c(0),frequency=c(0),probabilidad_marginal_visitantes=
 TablaVisitantes=rbind(TablaVisitantes,nuevalinea)
 
 #unimos las dos tablas creadas anteriormente para poder sacar la probabilidad conjunta 
-newtable<-merge(TablaLocales,TablaVisitantes,by="NGoles",all.x = TRUE,)
+#newtable<-merge(TablaLocales,TablaVisitantes,by="NGoles",all.x = TRUE,)
+#newtable$sum_probabilidades=TablaLocales$probabilidad_marginal_local+TablaVisitantes$probabilidad_marginal_visitantes
+#newtable$sum_frecuencia=TablaLocales$frequency+TablaVisitantes$frequency
 
-newtable$sum_probabilidades=TablaLocales$probabilidad_marginal_local+TablaVisitantes$probabilidad_marginal_visitantes
-newtable$sum_frecuencia=TablaLocales$frequency+TablaVisitantes$frequency
+
+#prueba ver que sucede 
+tabla_conjunta <- unite(datagoles,Goles,c(1:2),  sep = " ", remove = TRUE)
+tablaConjunta_frecuencia <-tabla_conjunta %>%group_by(Goles) %>% summarise(frequency = n())
+
+#sacar probabilidad conjunta 
+tablacojunta_probabilidad <- tablaConjunta_frecuencia$frequency / total_datos
+
+TablaFinal <- data.frame(tablaConjunta_frecuencia,tablacojunta_probabilidad)
