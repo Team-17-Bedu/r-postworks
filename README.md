@@ -10,7 +10,6 @@
   <p align="center">
     Postworks del modulo "Programación y estadística con R"
     <h4 align = "center"><strong>Equipo 17</strong></h4>
-    <br />
   </p>
   
 <p align="center">
