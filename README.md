@@ -9,12 +9,8 @@
 
   <p align="center">
     Postworks del modulo "Programación y estadística con R"
+    <h4 align = "center"><strong>Equipo 17</strong></h4>
     <br />
-    <a href="https://github.com/Team-17-Bedu/r-postworks"><strong>Explora el Proyecto »</strong></a>
-    <br />
-    <br />
-    ·
-    <a href="https://github.com/Team-17-Bedu/r-postworks/issues">Reportar un Bug</a>
   </p>
   
 <p align="center">
@@ -24,4 +20,3 @@
   </a>
 </p>
 </p>
-
