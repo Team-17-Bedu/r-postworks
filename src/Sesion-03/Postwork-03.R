@@ -49,8 +49,8 @@ df_visitantes <- cbind(df_visitantes,
 df_visitantes_y <- df_visitantes[1:3, ]
 
 # Union de columnas FTHG y FTAG
-data_conjunto <- data[data$FTHG <= 3 & data$FTAG <= 3, ]
-data_conjunto <- unite_(data_conjunto, "resultado", c("FTHG", "FTAG"), sep = " ",remove = FALSE)
+#data_conjunto <- data[data$FTHG <= 3 & data$FTAG <= 3, ]
+data_conjunto <- unite_(data, "resultado", c("FTHG", "FTAG"), sep = " ",remove = FALSE)
 
 # Obtencion de tabla de frecuencias conjuntas
 df_conjunto <- as.data.frame(table(data_conjunto$FTHG, data_conjunto$FTAG))
