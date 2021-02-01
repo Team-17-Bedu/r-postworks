@@ -10,7 +10,7 @@
   <p align="center">
      Análisis Exploratorio de Datos (AED o EDA)
     <br />
-    <a href="https://github.com/begeistert/microcontrollers-ccs-c-compiler"><strong>Explora el código »</strong></a>
+    <a href="https://github.com/Team-17-Bedu/r-postworks/blob/main/src/Sesion-03/Postwork-03.R"><strong>Explora el código »</strong></a>
     <br/>
     <br/>
   </p
