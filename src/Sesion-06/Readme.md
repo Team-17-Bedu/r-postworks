@@ -75,14 +75,14 @@ head(data)
 <br/>
 Con el fin de observar el dataframe ya cargado. Con ello observamos la siguiente tabla:
 
-|index|date      |home.team|home.score|away.team|away.score|
-|------|----------|---------|----------|---------|----------|------|
-|1     |2010-08-28|Hercules |0         |Ath Bilbao    |1     |
-|2     |2010-08-28|Levante  |1         |Sevilla  |4         |      |
-|3     |2010-08-28|Malaga   |1         |Valencia |3         |      |
-|4     |2010-08-29|Espanol  |3         |Getafe   |1         |      |
-|5     |2010-08-29|La Coruna  |0        |Zaragoza  |0     |
-|6     |2010-08-29|Mallorca |0         |Real Madrid    |0     |
+|index |date      |home.team|home.score|away.team|away.score|
+|------|----------|---------|----------|---------|----------|
+|1     |2010-08-28|Hercules |0         |Ath Bilbao  |1      |     
+|2     |2010-08-28|Levante  |1         |Sevilla  |4         |      
+|3     |2010-08-28|Malaga   |1         |Valencia |3         |      
+|4     |2010-08-29|Espanol  |3         |Getafe   |1         |      
+|5     |2010-08-29|La Coruna|0         |Zaragoza  |0        |      
+|6     |2010-08-29|Mallorca |0         |Real Madrid|0       |        
 
 Seguidamente se le agrego un nuemo campo al DataFrame llamado _`sumagoles`_. Se aneo con la siguiente linea de codigo:
 ```r
