@@ -19,7 +19,7 @@ setwd(dir)
 #    juega como visitante anote y goles (x=0,1,2,, y=0,1,2,)
 
 # Lectura del dataset
-data <- read.csv("dataframe-postwork-02.csv")
+data <- read.csv("dataurl1920.csv")
 
 # Obtencion de longitud total de datos
 total_datos <- nrow(data)
@@ -48,12 +48,8 @@ df_visitantes <- cbind(df_visitantes,
 # Solucion a la segunda seccion del punto 1
 df_visitantes_y <- df_visitantes[1:3, ]
 
-# Union de columnas FTHG y FTAG
-#data_conjunto <- data[data$FTHG <= 3 & data$FTAG <= 3, ]
-data_conjunto <- unite_(data, "resultado", c("FTHG", "FTAG"), sep = " ",remove = FALSE)
-
 # Obtencion de tabla de frecuencias conjuntas
-df_conjunto <- as.data.frame(table(data_conjunto$FTHG, data_conjunto$FTAG))
+df_conjunto <- as.data.frame(table(data$FTHG, data_conjunto$FTAG))
 colnames(df_conjunto) <- c("local", "visitante", "frecuencia")
 
 # Calculo de probabilidad conjunta de los equipos y adicion al dataframe
