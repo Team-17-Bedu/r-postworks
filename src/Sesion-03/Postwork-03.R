@@ -49,7 +49,7 @@ df_visitantes <- cbind(df_visitantes,
 df_visitantes_y <- df_visitantes[1:3, ]
 
 # Obtencion de tabla de frecuencias conjuntas
-df_conjunto <- as.data.frame(table(data$FTHG, data_conjunto$FTAG))
+df_conjunto <- as.data.frame(table(data$FTHG, data$FTAG))
 colnames(df_conjunto) <- c("local", "visitante", "frecuencia")
 
 # Calculo de probabilidad conjunta de los equipos y adicion al dataframe

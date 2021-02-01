@@ -82,9 +82,7 @@ Con el fin de observar el dataframe ya cargado. Se genero la siguiente tabla:
 |3     |2010-08-28|Malaga   |1         |Valencia |3         |      
 |4     |2010-08-29|Espanol  |3         |Getafe   |1         |      
 |5     |2010-08-29|La Coruna|0         |Zaragoza  |0        |      
-|6     |2010-08-29|Mallorca |0         |Real Madrid|0       |    
-
-Se le agrego un nuevo campo al DataFrame llamado _`sumagoles`_, con la siguiente linea de codigo:
+|6     |2010-08-29|Mallorca |0         |Real Madrid|0       |  
 ```r
 #El resultado sera la suma de goles del equipo visitante más los del equipo local
 data$sumagoles <- data$home.score + data$away.score
