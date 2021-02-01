@@ -8,7 +8,7 @@
   <h3 align="center"><strong>Postworks - R</strong></h3>
   <h4 align="center"><strong>Postwork 6</strong></h4>
   <p align="center">
-     Sesion 6. Series de tiempo.
+     Series de tiempo
     <br />
     <a href="https://github.com/begeistert/microcontrollers-ccs-c-compiler"><strong>Explora el código »</strong></a>
     <br/>
@@ -27,7 +27,7 @@
 ## Descripción 
 Haciendo uso de los conocimiento adquiridos durante la sesión se graficará un seria de tiempo del documento _.csv_
 
-Importa el conjunto de datos match.data.csv a `R` y realiza lo siguiente:
+Importar el conjunto de datos match.data.csv a `R` y realiza lo siguiente:
 
 1. Se le agregara una nueva columna llamada `sumagoles` que contenga la suma de goles por partido.
 
@@ -35,11 +35,11 @@ Importa el conjunto de datos match.data.csv a `R` y realiza lo siguiente:
 
 3. Se creará la serie de tiempo del promedio por mes de la suma de goles hasta diciembre de 2019.
 
-4. Se graficará la serie de tiempo. Además se agregara las etiquetas describiendo la grafica.
+4. Se graficará la serie de tiempo. Además, se agregará las etiquetas describiendo la grafica.
 
 ## Solución 
 
-Primero se descargaron las bibliotecas necesarias para la realización del programa. Las escuelas _`dplyr`_ y _`lubridate`_
+Primero, se descargaron las bibliotecas necesarias para la realización del programa. Las cuales son: _`dplyr`_ y _`lubridate`_.
 
 ```r
 #Instalacion del paquete "dplyr" para la manipulacion de dataframes.
@@ -49,7 +49,7 @@ install.packages("lubridate")
 ```
 <br/>
 
-Posteriormente se hicieron uso de las _librerias_  correspondientes:
+Posteriormente se hicieron uso de las _bibliotecas_  correspondientes:
 
 ```r
 #Uso de las librerias descargados
@@ -66,25 +66,25 @@ Se cargo el documento _match.data.csv_.
 data <- read.csv("C:/Users/ordna/OneDrive/Documents/Data_BEDU/Modulo_2/Programacion-con-R-Santander-master/Sesion-06/Postwork/match.data.csv")
 ```
 
-Posteriormente se ejecuto la linea de codigo:
+Posteriormente, se ejecuto la siguiente linea de codigo:
 ```r
 #Revisando contenido del DataFrame
 head(data)
 ```
 
 <br/>
-Con el fin de observar el dataframe ya cargado. Con ello observamos la siguiente tabla:
+Con el fin de observar el dataframe ya cargado. Se genero la siguiente tabla:
 
-|index|date      |home.team|home.score|away.team|away.score|
-|------|----------|---------|----------|---------|----------|------|
-|1     |2010-08-28|Hercules |0         |Ath Bilbao    |1     |
-|2     |2010-08-28|Levante  |1         |Sevilla  |4         |      |
-|3     |2010-08-28|Malaga   |1         |Valencia |3         |      |
-|4     |2010-08-29|Espanol  |3         |Getafe   |1         |      |
-|5     |2010-08-29|La Coruna  |0        |Zaragoza  |0     |
-|6     |2010-08-29|Mallorca |0         |Real Madrid    |0     |
+|index |date      |home.team|home.score|away.team|away.score|
+|------|----------|---------|----------|---------|----------|
+|1     |2010-08-28|Hercules |0         |Ath Bilbao  |1      |     
+|2     |2010-08-28|Levante  |1         |Sevilla  |4         |      
+|3     |2010-08-28|Malaga   |1         |Valencia |3         |      
+|4     |2010-08-29|Espanol  |3         |Getafe   |1         |      
+|5     |2010-08-29|La Coruna|0         |Zaragoza  |0        |      
+|6     |2010-08-29|Mallorca |0         |Real Madrid|0       |    
 
-Seguidamente se le agrego un nuemo campo al DataFrame llamado _`sumagoles`_. Se aneo con la siguiente linea de codigo:
+Se le agrego un nuevo campo al DataFrame llamado _`sumagoles`_, con la siguiente linea de codigo:
 ```r
 #El resultado sera la suma de goles del equipo visitante más los del equipo local
 data$sumagoles <- data$home.score + data$away.score
@@ -92,7 +92,7 @@ data$sumagoles <- data$home.score + data$away.score
 
 ### - _Punto 2_
 
-Para obtener el punto dos se agrego dos campos nuevos; _`mes`_ y _`anio`_.
+Para obtener el objetivo del punto dos, se agrego dos campos nuevos: _`mes`_ y _`anio`_.
 
 ```r
 #Agregando una nueva columna con el numero de mes
@@ -101,7 +101,7 @@ data$mes <- as.numeric(month(data$date))
 data$anio <- as.numeric(year(data$date))
 ```
 
-Por ultimos, se uso un _"%>%"_ para poder obbtener el promedio por mes. Esto se observa en lasiguiente linea de codigo:
+Por ultimos, se uso un _"%>%"_ para poder obtener el promedio por mes. Esto se observa en la siguiente linea de codigo:
 
 ```r
 #Procedimiento elaborado para agrupar por (anio y mes) y agregarle la media
@@ -126,16 +126,16 @@ Por ultimo se visualizaron los resultados:
 
 ### - _Punto 3_
 
-Posteriormente se reordenaron los datos para generar la serie de tiempo.
+Posteriormente, se reordenaron los datos para generar la serie de tiempo.
 <br/>
 Se ordeno los datos con la siguiente linea de codigo:
 
 ```r
-#Oredenando de los campos anio y mes
+#Ordenando de los campos anio y mes
 df1 <- df[order(df$anio,df$mes),]
 ```
 
- Finalmente se genero la serie de tiempo con:
+Finalmente se genero la serie de tiempo con:
  ```r
 #Generando serie de tiempo
 goles.ts <- ts(df1[,3],start = c(2010,8), frequency = 12,end = c(2019,12))
@@ -155,7 +155,7 @@ La grafica es la siguiente:
 
 <p align="center">
   <a href="https://github.com/Team-17-Bedu/r-postworks">
-    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesion-06-img.jpeg" alt="Imagen Sesion 6">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesion-07-img.jpeg" alt="Imagen Sesion 6">
   </a>
 </p>
 

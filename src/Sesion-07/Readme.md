@@ -8,9 +8,9 @@
   </a>
 
   <h3 align="center"><strong>Postworks - R</strong></h3>
-  <h4 align="center"><strong>Postwork 6</strong></h4>
+  <h4 align="center"><strong>Postwork 7</strong></h4>
   <p align="center">
-     Sesion 7. RStudio Cloud - Github, conexiones con BDs y lectura de datos externos
+     RStudio Cloud - Github, conexiones con BDs y lectura de datos externos
     <br />
     <a href="https://github.com/begeistert/microcontrollers-ccs-c-compiler"><strong>Explora el código »</strong></a>
     <br/>
@@ -35,178 +35,94 @@ Importa el conjunto de datos data.csv a `R` y realiza lo siguiente:
 
 2. Una vez hecho esto, realizar un count para conocer el número de registros que se tiene en la base.
 
-3. Realiza una consulta utilizando la sintaxis de Mongodb, en la base de datos para conocer el número de goles que metió el Real Madrid el 20 de diciembre de 2015 y contra que equipo jugó, ¿perdió ó fue goleada?
+3. Realiza una consulta utilizando la sintaxis de **Mongodb**, en la base de datos para conocer el número de goles que metió el Real Madrid el 20 de diciembre de 2015 y contra que equipo jugó, ¿perdió ó fue goleada?
 
-4. Se graficará la serie de tiempo. Además se agregara las etiquetas describiendo la grafica.
+4. Por último, no olvides cerrar la conexión con la BDD.
 
 ## Solución 
 
-Primero se descargaron las bibliotecas necesarias para la realización del programa. Las escuelas _`dplyr`_ y _`lubridate`_
+Primero se descargaron las bibliotecas necesarias para la realización del programa. La biblioteca correspondiente es _`mongolite`_. La procedemos a instalar con la siguiente linea de codigo:
 
 ```r
-#Instalacion del paquete "dplyr" para la manipulacion de dataframes.
-install.packages("dplyr")
-#Instalacion del paquete "lubridate" para la manipulacion de dataframes.
-install.packages("lubridate")
+#Instalando librerias
+install.packages("mongolite")
 ```
 <br/>
 
-Posteriormente se hicieron uso de las _librerias_  correspondientes:
+Posteriormente se hicieron uso de la _libreria_  correspondiente con:
 
 ```r
-#Uso de las librerias descargados
-library("dplyr")
-library("lubridate")
+#Uso de libreria
+library("mongolite")
 ```
 
 ### - _Punto 1_
 
-Se cargo el documento _match.data.csv_.
+Primeramente, se creo una base de datos llamada _match_games_ en **Mongo Compass**. 
+<br/>Ya creada la base de datos, se crea una colección llamada _match_, para posteriormente exportar el docuemento _data.csv_. Esto se puede apreciar en la siguiente imagen:
 
-```r
-#Cargando documento .csv
-data <- read.csv("C:/Users/ordna/OneDrive/Documents/Data_BEDU/Modulo_2/Programacion-con-R-Santander-master/Sesion-06/Postwork/match.data.csv")
-```
+<p align="center">
+  <a href="https://github.com/Team-17-Bedu/r-postworks">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesion-06-img.jpeg" alt="Imagen Sesion 7">
+  </a>
+</p>
 
-Posteriormente se ejecuto la linea de codigo:
-```r
-#Revisando contenido del DataFrame
-head(data)
-```
-
-<br/>
-Con el fin de observar el dataframe ya cargado. Con ello observamos la siguiente tabla:
-
-|index|date      |home.team|home.score|away.team|away.score|
-|------|----------|---------|----------|---------|----------|------|
-|1     |2010-08-28|Hercules |0         |Ath Bilbao    |1     |
-|2     |2010-08-28|Levante  |1         |Sevilla  |4         |      |
-|3     |2010-08-28|Malaga   |1         |Valencia |3         |      |
-|4     |2010-08-29|Espanol  |3         |Getafe   |1         |      |
-|5     |2010-08-29|La Coruna  |0        |Zaragoza  |0     |
-|6     |2010-08-29|Mallorca |0         |Real Madrid    |0     |
-
-Seguidamente se le agrego un nuemo campo al DataFrame llamado _`sumagoles`_. Se aneo con la siguiente linea de codigo:
-```r
-#El resultado sera la suma de goles del equipo visitante más los del equipo local
-data$sumagoles <- data$home.score + data$away.score
-```
+Como se observa en la imagen se logro crear colección correctamente.
 
 ### - _Punto 2_
 
-Para obtener el punto dos se agrego dos campos nuevos; _`mes`_ y _`anio`_.
+Ahora toca realizar las consultas correspondientes atraves de _R Studio_. Para ello, se instalo la biblioteca _`mongolite`_. En la siguiente linea de codigo se instalo tal dependencia:
 
 ```r
-#Agregando una nueva columna con el numero de mes
-data$mes <- as.numeric(month(data$date))
-#Agregando una nueva columna con el numero del año
-data$anio <- as.numeric(year(data$date))
+#Instalando librerias
+install.packages("mongolite")
 ```
-
-Por ultimos, se uso un _"%>%"_ para poder obbtener el promedio por mes. Esto se observa en lasiguiente linea de codigo:
+Y para hacer uso de tal _biblioteca_ se uso:
 
 ```r
-#Procedimiento elaborado para agrupar por (anio y mes) y agregarle la media
-#Se uso "%>%" para realizar esta operacion
-df <- data %>% 
-  group_by(anio,mes) %>%
-  summarize(promedio_goles=mean(sumagoles))
+#Uso de libreria
+library("mongolite")
 ```
-Por ultimo se visualizaron los resultados:
+Ahora se conecto a la _base de datos_ y la _colección_ con la siguiente linea de codigo:
 
-|FIELD1|anio      |mes     |promedio_goles|
-|------|----------|--------|--------------|
-|      |<dbl>     |<dbl>   |<dbl>         |
-|1     |2010      |8       |2.2           |
-|2     |2010      |9       |2.42          |
-|3     |2010      |10      |3.03          |
-|4     |2010      |11      |2.90          |
-|5     |2010      |12      |2.73          |
-|6     |2011      |1       |3             |
+```r
+#Conectando con Mongolite
+con <- mongo("match", url = "mongodb+srv://Alejandro:<Password>@cluster0.kwzlt.mongodb.net/match_games?retryWrites=true&w=majority")
+```
+Explicando el codigo anterior. El primer argumento es la _colección_, mientras que el segundo parametro es el _Conection String_.
+<br/>
 
+Finalmente se realizo un _count_ a la _colección_.
+
+```console
+[1] "Resultado de la cuenta de documentos en R:"
+> con$count()
+[1] 1140
+```
 ### - _Punto 3_
 
-Posteriormente se reordenaron los datos para generar la serie de tiempo.
-<br/>
-Se ordeno los datos con la siguiente linea de codigo:
+Se realizo una consulta mas detallada en `R`. La cual era, conocer el numero de goles que metio el Real Madrid el 20 de Diciembre de 2015 y que contra que equipo jugo. Para tal consulta se escribo la siguiente linea de codigo:
 
 ```r
-#Oredenando de los campos anio y mes
-df1 <- df[order(df$anio,df$mes),]
+#Consulta del real madrid
+consulta <- con$find(
+  query = '{"Date":"2017-12-03","HomeTeam":"Real Madrid"}'
+)
 ```
- 
- Finalmente se genero la serie de tiempo con:
- ```r
-#Generando serie de tiempo
-goles.ts <- ts(df1[,3],start = c(2010,8), frequency = 12,end = c(2019,12))
+
+Los resultados obtenidos son:
+
+```console
+> print(consulta)
+data frame with 0 columns and 0 rows
 ```
+El resultado se pudo deber a que el archivo _data.csv_. No cuenta con registros menores al año 2017.
+
 ### - _Punto 4_
 
-Por ultimo, se genero la grafica de la serie de tiempo con la siguiente linea de codigo:
- ```r
-#Graficando la serie de tiempo 
-plot(goles.ts, xlab = "", ylab = "")
-title(main = "Serie de Goles",
-      ylab = "Resultados de partidos en goles",
-      xlab = "Mes")
+Por ultimo se cerro la conexión con la siguiente linea de codigo:
+
+```r
+#Cerrando la conexion
+rm(con)
 ```
-
-La grafica es la siguiente:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Postwork. Alojar el fichero a un local host de MongoDB 
-
-### OBJETIVO
-
-- Realizar el alojamiento del fichero de un fichero `.csv` a una base de datos (BDD), en un local host de Mongodb a traves de `R`
-
-#### REQUISITOS
-
-- Mongodb Compass
-- librerías `mongolite`
-- Nociones básicas de manejo de BDD
-
-#### DESARROLLO
-
-
-Utilizando el manejador de BDD _Mongodb Compass_ (previamente instalado), deberás de realizar las siguientes acciones: 
-
-- Alojar el fichero  `data.csv` en una base de datos llamada `match_games`, nombrando al `collection` como `match`
-
-- Una vez hecho esto, realizar un `count` para conocer el número de registros que se tiene en la base
-
-- Realiza una consulta utilizando la sintaxis de **Mongodb**, en la base de datos para conocer el número de goles que metió el Real Madrid el 20 de diciembre de 2015 y contra que equipo jugó, ¿perdió ó fue goleada?
-
-- Por último, no olvides cerrar la conexión con la BDD
- 
