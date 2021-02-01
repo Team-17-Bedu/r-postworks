@@ -105,7 +105,7 @@ probabilidad_marginal_local<-TF_locales$frequency /total_datos
 ```
 <p align="center">
   <a href="https://github.com/Team-17-Bedu/r-postworks">
-    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesopm-01-captura-3.jpeg" alt="Tabla Frecuencia de locales">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesion-01-captura-3.jpeg" alt="Tabla de probabilidades marginales">
   </a>
 </p>
 
