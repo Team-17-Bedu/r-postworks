@@ -85,7 +85,7 @@ TF_locales<-datagoles%>%group_by(FTHG)%>%summarise(frequency=n())
 ```
 <p align="center">
   <a href="https://github.com/Team-17-Bedu/r-postworks">
-    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesopm-01-captura-2.jpeg" alt="Tabla Frecuencia de locales">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesion-01-captura-2.jpeg" alt="Tabla Frecuencia de locales">
   </a>
 </p>
 
@@ -95,7 +95,7 @@ TF_visitantes<-datagoles%>%group_by(FTAG)%>%summarise(frequency=n())
 ```
 <p align="center">
   <a href="https://github.com/Team-17-Bedu/r-postworks">
-    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesopm-01-captura-3.jpeg" alt="Tabla Frecuencia de locales">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesion-01-captura-3.jpeg" alt="Tabla Frecuencia de locales">
   </a>
 </p>
 
@@ -115,7 +115,7 @@ probabilidad_marginal_visitantes<-TF_visitantes$frequency/total_datos
 ```
 <p align="center">
   <a href="https://github.com/Team-17-Bedu/r-postworks">
-    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesopm-01-captura-3.jpeg" alt="Tabla Frecuencia de locales">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesion-01-captura-3.jpeg" alt="Tabla Frecuencia de locales">
   </a>
 </p>
 
@@ -126,7 +126,7 @@ TablaLocales$NGoles=TablaLocales$FTHG
 ```
 <p align="center">
   <a href="https://github.com/Team-17-Bedu/r-postworks">
-    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesopm-01-captura-4.jpeg" alt="Tabla Frecuencia de locales">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesion-01-captura-4.jpeg" alt="Tabla Frecuencia de locales">
   </a>
 </p>
 Visualizar tabla con la frecuencia y su probabilidad de los visitantes 
@@ -137,7 +137,7 @@ TablaVisitantes$NGoles=TablaVisitantes$FTAG
 ```
 <p align="center">
   <a href="https://github.com/Team-17-Bedu/r-postworks">
-    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesopm-01-captura-5.jpeg" alt="Tabla Frecuencia de visitantes">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesion-01-captura-5.jpeg" alt="Tabla Frecuencia de visitantes">
   </a>
 </p>
 
@@ -152,6 +152,6 @@ tablacojunta_probabilidad <- tablaConjunta_frecuencia$frequency / total_datos
 ```
 <p align="center">
   <a href="https://github.com/Team-17-Bedu/r-postworks">
-    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesopm-01-captura-6.jpeg" alt="Tabla Final">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesion-01-captura-6.jpeg" alt="Tabla Final">
   </a>
 </p>
