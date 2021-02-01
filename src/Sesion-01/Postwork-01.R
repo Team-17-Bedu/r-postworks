@@ -41,17 +41,8 @@ TablaLocales$NGoles=TablaLocales$FTHG
 TablaVisitantes<-data.frame(TF_visitantes,probabilidad_marginal_visitantes)
 TablaVisitantes$NGoles=TablaVisitantes$FTAG
 
-# Se agrega nueva linea para que la tabla de visitantes tenga los mismos tama�os y no exista problema al poder hacer alguna operacion
-nuevalinea=data.frame(FTAG=c(0),frequency=c(0),probabilidad_marginal_visitantes=c(0),NGoles=c(6))
-TablaVisitantes=rbind(TablaVisitantes,nuevalinea)
 
-# Unimos las dos tablas creadas anteriormente para poder sacar la probabilidad conjunta
-# newtable<-merge(TablaLocales,TablaVisitantes,by="NGoles",all.x = TRUE,)
-# newtable$sum_probabilidades=TablaLocales$probabilidad_marginal_local+TablaVisitantes$probabilidad_marginal_visitantes
-# newtable$sum_frecuencia=TablaLocales$frequency+TablaVisitantes$frequency
-
-
-# Prueba ver que sucede
+# Creacion de tabla de frecuencia conjunta 
 tabla_conjunta <- unite(datagoles,Goles,c(1:2),  sep = " ", remove = TRUE)
 tablaConjunta_frecuencia <-tabla_conjunta %>%group_by(Goles) %>% summarise(frequency = n())
 
