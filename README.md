@@ -34,7 +34,7 @@ Este repositorio fue creado para almacenar y presentar los `postworks` del modul
 
 ## Acerca de la beca
 
-Esta beca es iniciativa del _"Grupo Santander"_ enfocada en la formación de competencias tecnológicas con el objetico de desarrollar habilidades digitales altamente valoradas en el mercado.
+Esta beca es iniciativa del _"Grupo Santander"_ enfocada en la formación de competencias tecnológicas con el objetivo de desarrollar habilidades digitales altamente valoradas en el mercado.
 <br/>
 El programa logrará que el estudiante obtenga la capacidad de tomar decisiones, generar reportes, crear visualizaciones, responder preguntas y resolver problemas sobre bases de datos con las lenguajes R y Python haciendo uso de diferentes librerías, herramientas y paquetes para el análisis de datos.
 <br/>
