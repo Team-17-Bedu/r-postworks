@@ -8,7 +8,7 @@
   <h3 align="center"><strong>Postworks - R</strong></h3>
   <h4 align="center"><strong>Postwork 6</strong></h4>
   <p align="center">
-     Sesion 6. Series de tiempo.
+     Series de tiempo.
     <br />
     <a href="https://github.com/begeistert/microcontrollers-ccs-c-compiler"><strong>Explora el código »</strong></a>
     <br/>
@@ -155,7 +155,7 @@ La grafica es la siguiente:
 
 <p align="center">
   <a href="https://github.com/Team-17-Bedu/r-postworks">
-    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesion-06-img.jpeg" alt="Imagen Sesion 6">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesion-07-img.jpeg" alt="Imagen Sesion 6">
   </a>
 </p>
 
