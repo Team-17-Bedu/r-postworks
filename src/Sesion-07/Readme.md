@@ -12,7 +12,7 @@
   <p align="center">
      RStudio Cloud - Github, conexiones con BDs y lectura de datos externos
     <br />
-    <a href="https://github.com/begeistert/microcontrollers-ccs-c-compiler"><strong>Explora el código »</strong></a>
+    <a href="Postwork_07.R"><strong>Explora el código »</strong></a>
     <br/>
     <br/>
   </p>
