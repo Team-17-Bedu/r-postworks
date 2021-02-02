@@ -12,7 +12,7 @@
   <p align="center">
      Manipulación de datos en R
     <br />
-    <a href="https://github.com/begeistert/microcontrollers-ccs-c-compiler"><strong>Explora el código »</strong></a>
+    <a href="Postwork-02.R"><strong>Explora el código »</strong></a>
     <br/>
     <br/>
   </p>
