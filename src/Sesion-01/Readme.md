@@ -31,9 +31,9 @@ El siguiente postwork, te servirá para ir desarrollando habilidades como si se 
 
 1. Importa los datos de soccer de la temporada 2019/2020 de la primera división de la liga española a R, los datos los puedes encontrar en el siguiente enlace: https://www.football-data.co.uk/spainm.php
 
-2. Del data frame que resulta de importar los datos a R, extrae las columnas que contienen los números de goles anotados por los equipos que jugaron en casa (FTHG) y los goles anotados por los equipos que jugaron como visitante (FTAG)
+2. Del data frame que resulta de importar los datos a R, extrae las columnas que contienen los números de goles anotados por los equipos que jugaron en casa (_FTHG_) y los goles anotados por los equipos que jugaron como visitante (_FTAG_)
 
-3. Consulta cómo funciona la función table en R al ejecutar en la consola ?table
+3. Consulta cómo funciona la función table en R al ejecutar en la consola `?table`
 
 Posteriormente elabora tablas de frecuencias relativas para estimar las siguientes probabilidades:
 
