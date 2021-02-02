@@ -12,7 +12,7 @@
   <p align="center">
     Introducción a R y Software
     <br />
-    <a href="https://github.com/begeistert/microcontrollers-ccs-c-compiler"><strong>Explora el código »</strong></a>
+    <a href="Postwork-01.R"><strong>Explora el código »</strong></a>
     <br/>
     <br/>
   </p>
