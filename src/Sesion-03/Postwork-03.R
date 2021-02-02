@@ -11,7 +11,7 @@ library(tidyr)
 dir <- paste0(getwd(), "/src/Sesion-03/datasets")
 setwd(dir)
 
-# 1. Con el último data frame obtenido en el postwork de la sesión 2, elabora tablas
+# 1. Con el último data set obtenido en el postwork de la sesión 2, elabora tablas
 # de frecuencias relativas para estimar las siguientes probabilidades:
 #  - La probabilidad (marginal) de que el equipo que juega en casa anote x goles (x=0,1,2,)
 #  - La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y=0,1,2,)
@@ -49,7 +49,7 @@ df_visitantes <- cbind(df_visitantes,
 df_visitantes_y <- df_visitantes[1:3, ]
 
 # Obtencion de tabla de frecuencias conjuntas
-df_conjunto <- as.data.frame(table(data$FTHG, data_conjunto$FTAG))
+df_conjunto <- as.data.frame(table(data$FTHG, data$FTAG))
 colnames(df_conjunto) <- c("local", "visitante", "frecuencia")
 
 # Calculo de probabilidad conjunta de los equipos y adicion al dataframe
