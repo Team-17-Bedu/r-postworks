@@ -10,7 +10,7 @@
   <p align="center">
      Series de tiempo
     <br />
-    <a href="Postwork-06.R"><strong>Explora el código »</strong></a>
+    <a href="Postwork_06.R"><strong>Explora el código »</strong></a>
     <br/>
     <br/>
   </p>
