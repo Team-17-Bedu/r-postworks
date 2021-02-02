@@ -11,7 +11,7 @@ library(tidyr)
 dir <- paste0(getwd(), "/src/Sesion-03/datasets")
 setwd(dir)
 
-# 1. Con el último data frame obtenido en el postwork de la sesión 2, elabora tablas
+# 1. Con el último data set obtenido en el postwork de la sesión 2, elabora tablas
 # de frecuencias relativas para estimar las siguientes probabilidades:
 #  - La probabilidad (marginal) de que el equipo que juega en casa anote x goles (x=0,1,2,)
 #  - La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y=0,1,2,)
