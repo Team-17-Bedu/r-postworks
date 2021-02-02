@@ -54,3 +54,26 @@ Por ultimo se obtiene la tabla de cocientes
 # Se obtiene la tabla de cocientes
 conjunto <- goles / outer(rowSums(goles), colSums(goles))
 ```
+
+### - _Punto 2_
+Primero se define la funcion `bootstrap` para poder ejecutar el procedimiento homonimo
+```r
+bootstrap <- function(){
+  # Generacion de una muestra "replica" del mismo tamaño que la
+  # original
+  sdatos <- sample_frac(datos, size = 1, replace = T)
+  goles <- prop.table(table(local = sdatos$FTHG,
+                            visitante = sdatos$FTAG))
+  conjunto <- goles / outer(rowSums(goles), colSums(goles))
+  return(conjunto)
+}
+```
+Se define una semilla para poder reproducir los resultados obtenidos
+```r
+set.seed(1999)
+```
+Se obtiene una replica de la muestra origina
+```r 
+boot <- replicate(1000, bootstrap(), simplify = F)
+```
+Por ultimo se genera una grafica que representara la correlacion donde $$\bar(x).$$
