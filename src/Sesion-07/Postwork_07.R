@@ -31,13 +31,20 @@ con$count()
 # 3. Realiza una consulta utilizando la sintaxis de Mongodb,
 #    en la base de datos para conocer el numero de goles que
 #    metio el Real Madrid el 20 de diciembre de 2015 y contra
-#    que equipo jugo ¿perdio o fue goleada?
+#    que equipo jugo ï¿½perdio o fue goleada?
 #
 #Consulta del real madrid
 consulta <- con$find(
   query = '{"Date":"2017-12-03"}'
 )
 
+#Impriendo consulta
+print(consulta)
+#Consulta 2, con datos anexados de internet
+
+consulta <- con$find(
+  query = '{"Date":"20/12/2015","HomeTeam":"Real Madrid"}'
+)
 #Impriendo consulta
 print(consulta)
 

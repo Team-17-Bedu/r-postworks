@@ -1,4 +1,12 @@
 # Postwork sesion 2
+# Objetivo: 
+# Importar múltiples archivos csv a R.
+# Observar algunas características y manipular los data frames.
+# Creado por:
+# Elias Farias Abraham 
+# Montiel Cardona Iván
+#Tostado Blazquez Raul
+#Viveros Sánchez Alejandro
 
 # Se llama a la libreria dplyr
 library(dplyr)

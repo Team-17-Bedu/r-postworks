@@ -106,7 +106,7 @@ Se realizo una consulta mas detallada en `R`. La cual era, conocer el numero de 
 ```r
 #Consulta del real madrid
 consulta <- con$find(
-  query = '{"Date":"2017-12-03","HomeTeam":"Real Madrid"}'
+  query = '{"Date":"20-12-2015","HomeTeam":"Real Madrid"}'
 )
 ```
 
@@ -117,6 +117,16 @@ Los resultados obtenidos son:
 data frame with 0 columns and 0 rows
 ```
 El resultado se pudo deber a que el archivo _data.csv_. No cuenta con registros menores al año 2017.
+Pero realizando un analisis, se determino que este tipo de inconvenientes se presentan muy seguido en la rama de Ciencia de Datos. Por ello se investigo en los registros de la liga española los registros pertenecientes a los años 2015 a 2016. Obteniendo el siguiente resultado:
+
+```console
+> #Impriendo consulta
+> print(consulta)
+        Date    HomeTeam  AwayTeam FTHG FTAG
+1 20/12/2015 Real Madrid Vallecano   10    2
+```
+
+Donde se observa que el Vallecano fue aplastado por el Real Madrid.
 
 ### - _Punto 4_
 

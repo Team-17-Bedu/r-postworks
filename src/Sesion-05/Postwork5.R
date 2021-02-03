@@ -1,5 +1,13 @@
-# POSTWORK 5
-# DESARROLLO
+# Titulo    : Postwork Sesion 4
+# Objetivo  : - Investigar la dependencia o independecia de
+#               las variables aleatorias X y Y, el número de
+#               goles anotados por el equipo de casa y el número
+#               de goles anotados por el equipo visitante.
+# Creado por: Elias Farias Abraham
+#             Ivan Montiel Cardona
+#             Tostado Blazquez Raul
+#             Viveros Sánchez Alejandro
+
 
 # 1.-A partir del conjunto de datos de soccer de la liga española 
 # de las temporadas 2017/2018, 2018/2019 y 2019/2020, crea el data 

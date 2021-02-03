@@ -1,4 +1,10 @@
-# Postwork Sesion 1
+# Titulo    : Postwork Sesion 1
+# Objetivo  : El Postwork tiene como objetivo que practiques los comandos básicos aprendidos durante la sesión, de tal modo que sirvan para reafirmar el conocimiento.
+# Creado por: 
+# Elias Farias Abraham 
+# Montiel Cardona Iván
+#Tostado Blazquez Raul
+#Viveros Sánchez Alejandro
 
 library(dplyr)
 library(janitor)
