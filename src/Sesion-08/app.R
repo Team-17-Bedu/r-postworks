@@ -1,6 +1,8 @@
 # Postwork 8- Equipo 17
-library(ggplot2)
+
 library(shiny)
+library(dplyr)
+library(ggplot2)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -20,7 +22,7 @@ ui <- fluidPage(
                              plotOutput("output_plot"),
                                         ),# Fin Tabpanel plot
                                         
-                             tabPanel("Probabilidad Marginal",  #Inicio Gráficas Postwork 3
+                             tabPanel("Probabilidad Marginal",  #Inicio GrÃ¡ficas Postwork 3
                                       h3("Probabilidad Marginal equipo local"),
                                         img(src = "Sesion-03-plt-1.png", 
                                         height = 450, width = 550),
@@ -30,9 +32,9 @@ ui <- fluidPage(
                                       h3("Probabilidades conjuntas"),
                                         img( src = "Sesion-03-plt-3.png", 
                                         height = 450, width = 550)
-                                        ), #Fin tabpanel Gráficas Postwork 3
+                                        ), #Fin tabpanel GrÃ¡ficas Postwork 3
                                      
-                              tabPanel("Table Match", dataTableOutput("data_Table")),#Data Table
+                              tabPanel("Table Match", dataTableOutput("data_table")),#Data Table
                               
                              tabPanel("Factor de Ganancia",  #Inicio Factores de ganancia
                                       h3("Factor de ganancia Maximo"),
@@ -42,7 +44,7 @@ ui <- fluidPage(
                                       img( src = "momio_promedio.png", 
                                            height = 350, width = 550)
                                       
-                             ), #Fin tabpanel Gráficas factores de ganancia
+                             ), #Fin tabpanel GrÃ¡ficas factores de ganancia
                              
                                        
                               tabPanel("Table", tableOutput("table")) ##EXTRA como prueba           
@@ -65,7 +67,7 @@ server <- function(input, output) {
                "home.team" = home.team)
     )
     
-    #Gráfica primera pestaña                      
+    #GrÃ¡fica primera pestaÃ±a                      
     output$output_plot <- renderPlot({
         data <-  read.csv("match.data.csv", header = T)
         x <- data[,input$x]
@@ -91,7 +93,7 @@ server <- function(input, output) {
 } #//FIN Server
 
 ##Carga del archivo Match.table
-setwd("C:/Users/abraham/Documents/DATASCIENCE/2daetapa/prueba/Postwork8")
+setwd("C:/Users/Raul/Desktop/BEDU/Sesion8/Postwork8")
 match.table <- read.csv("match.data.csv")
 
 # Run the application 
