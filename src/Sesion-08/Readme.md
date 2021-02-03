@@ -44,3 +44,39 @@ Para este postwork genera un dashboar en un solo archivo `app.R`, para esto real
 
 Nota: recuerda que si tienes problemas con el codificado guarda tu archivo `app.R` con la codificacion `UTF-8`
 ## Solucion
+### - _Pestaña 1_
+<p align="center">
+  <a href="https://github.com/Team-17-Bedu/r-postworks">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/postwork8-pestaña1.PNG" alt="predición">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Team-17-Bedu/r-postworks">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/postwork8-captura1-1.PNG" alt="predición">
+  </a>
+</p>
+
+### - _Pestaña 2_
+<p align="center">
+  <a href="https://github.com/Team-17-Bedu/r-postworks">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/postwork8-captura2.PNG" alt="predición">
+  </a>
+</p>
+
+### - _Pestaña 3_
+<p align="center">
+  <a href="https://github.com/Team-17-Bedu/r-postworks">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/postwork8-captura3.PNG
+" alt="predición">
+  </a>
+</p>
+
+### - _Pestaña 4_
+<p align="center">
+  <a href="https://github.com/Team-17-Bedu/r-postworks">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/imgpostwork8-pestaña4.PNG
+" alt="predición">
+  </a>
+</p>
+
