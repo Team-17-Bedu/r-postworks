@@ -67,16 +67,14 @@ Nota: recuerda que si tienes problemas con el codificado guarda tu archivo `app.
 ### - _Pestaña 3_
 <p align="center">
   <a href="https://github.com/Team-17-Bedu/r-postworks">
-    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/postwork8-captura3.PNG
-" alt="predición">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/postwork8-captura3.PNG" alt="predición">
   </a>
 </p>
 
 ### - _Pestaña 4_
 <p align="center">
   <a href="https://github.com/Team-17-Bedu/r-postworks">
-    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/imgpostwork8-pestaña4.PNG
-" alt="predición">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/postwork8-pestaña4.PNG" alt="predición">
   </a>
 </p>
 
