@@ -49,7 +49,7 @@ El programa logrará que el estudiante obtenga la capacidad de tomar decisiones,
 - [Sesión 8](src/Sesion-08)
 
 ## Requerimientos
-* R Studio | PyCharm
+* R Studio | Jetbrains PyCharm
 * R
 
 ## Acerca de los colaboradores
