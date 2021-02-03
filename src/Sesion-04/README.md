@@ -55,6 +55,19 @@ Por ultimo se obtiene la tabla de cocientes
 conjunto <- goles / outer(rowSums(goles), colSums(goles))
 ```
 
+Esto da como resultado la siguiente tabla
+
+|local|0  |1        |2        |3        |4        |5        |
+|-----|---|---------|---------|---------|---------|---------|
+|     0  |1.0477941|0.9023066|0.7996633|1.9191919|0.9595960|4.3181818|
+|     1  |0.9102050|1.0526911|1.1372989|0.7996633|0.9595960|0.0000000|
+|     2  |1.1007130|1.0025629|0.9477491|0.6397306|0.8529742|0.0000000|
+|     3  |1.0294118|1.0447761|0.8641975|1.1111111|1.1111111|0.0000000|
+|     4  |0.7983193|1.0127932|1.3403880|0.0000000|3.0158730|0.0000000|
+|     5  |0.6985294|1.0634328|1.7592593|0.0000000|0.0000000|0.0000000|
+|     6  |2.7941176|0.0000000|0.0000000|0.0000000|0.0000000|0.0000000|
+
+
 ### - _Punto 2_
 Primero se define la funcion `bootstrap` para poder ejecutar el procedimiento homonimo
 ```r
@@ -76,4 +89,53 @@ Se obtiene una replica de la muestra origina
 ```r 
 boot <- replicate(1000, bootstrap(), simplify = F)
 ```
-Por ultimo se genera una grafica que representara la correlacion donde $$\bar(x).$$
+Por ultimo se genera una grafica que representara la correlacion donde x_testada = 1 o en su representación grafica, la linea roja, que puede indicar dependencia
+```r
+# Combinación de filas y columnas
+crossing(
+  row = seq_len(nrow(goles)),
+  col = seq_len(ncol(goles))
+) %>%
+  # Seleccion de celdas en todas las muestras
+  mutate(
+    indices = map2(row, col, function(x, y)
+      sapply(boot, function(m) m[x, y]))
+  ) %>%
+  # Conversion de las filas y columnas en factores
+  mutate(
+    row = factor(str_glue("Local: {row-1}")),
+    col = factor(str_glue("Visitante: {col-1}"))
+  ) %>%
+  # Desanida la columna de indices
+  unnest(indices) %>%
+  # Supresion de valores NaN
+  filter(!is.nan(indices)) %>%
+  # Supresion de las combinaciones con un solo valor distinto
+  group_by(row, col) %>%
+  filter(n_distinct(indices) > 1) %>%
+  ungroup() %>%
+  # Generacion del grafico
+  ggplot(aes(indices)) +
+    # Generacion de un grid graficando por combinacion de fila
+    # y columna, donde no se excluiran frames vacios
+    facet_wrap(~ row + col, scales = "free", ncol = ncol(goles), drop = F) +
+    geom_histogram(bins = 12) +
+    geom_vline(xintercept = 1, color = "red") +
+    labs(
+      title = "Probabilidades Conjuntas sobre el Producto de Probabilidades Marginales",
+      x = NULL, y = NULL
+    ) +
+    theme(
+      axis.text = element_blank(),
+      axis.ticks = element_blank(),
+      panel.grid = element_blank()
+    )
+```
+
+Lo anterior dio como resultado la siguiente gráfica
+
+<p align="center">
+  <a href="https://github.com/Team-17-Bedu/r-postworks">
+    <img src="https://github.com/Team-17-Bedu/r-postworks/blob/main/img/Sesion-04-plot.png" alt="dataset">
+  </a>
+</p>
